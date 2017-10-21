@@ -74,9 +74,9 @@ form input[type=text] {
 }
 
 .spinner {
-    float: right;
     height: 46px;
     margin-bottom: 5px;
+    
 }
 
 .spinner img {
@@ -86,5 +86,12 @@ form input[type=text] {
 .friend {
     color: #fff;
     background-color: #0090da;
+}
+
+.current-room {
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
 }
 
