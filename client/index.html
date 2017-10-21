@@ -7,6 +7,7 @@
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
     <script>
       // YOU DO NOT NEED TO EDIT THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -26,6 +27,19 @@
     <div id="main">
       <h1>chatterbox</h1>
       <!-- Your HTML goes here! -->
+      <form id="send_form" action="" method="">
+        Name:<br>
+        <input id="username" type="text" name="username" value=""><br>
+        Message:<br>
+        <input id="message" type="text" name="message" value=""><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <select class="room-selector">
+        <option value="">All</option>
+        <option value="basement">Basement</option>
+        <option value="laura">Laura</option>
+        <option value="4chan">4chan</option>
+      </select>
     </div>
     <div id="chats"></div>
   </body>
