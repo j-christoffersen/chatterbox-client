@@ -14,7 +14,9 @@ describe('chatterbox', function() {
     var ajaxSpy;
 
     before(function() {
-      ajaxSpy = sinon.stub($, 'ajax');
+      ajaxSpy = sinon.stub($, 'ajax', function() {
+        return {done: sinon.stub()};
+      });
       app.init();
     });
 
@@ -61,7 +63,8 @@ describe('chatterbox', function() {
         app.fetch();
         expect($.ajax.calledOnce).to.be.true;
         ajaxUrl = typeof $.ajax.args[0][0] === 'string' ? $.ajax.args[0][0] : $.ajax.args[0][0].url;
-        expect(ajaxUrl).to.equal(app.server);
+        var server = 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages';
+        expect(ajaxUrl.substring(0, server.length)).to.equal(server);
         done();
       });
 
